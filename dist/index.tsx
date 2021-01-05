@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
+  StyleProp,
   Text,
-  View
+  ViewStyle
 } from 'react-native';
 import Timer from 'react-timer-mixin';
 
@@ -17,8 +18,9 @@ export default class AnimateNumber extends Component {
     defaultValue: number,
     timing: 'linear' | 'easeOut' | 'easeIn' | ((interval: number, progress: number) => number),
     formatter: (format: number) => number,
-    onProgress: (value: number, total: number) => {},
+    onProgress?: (value: number, total: number) => {},
     onFinish: (total:number, displayValue: number) => {}
+    style: StyleProp<ViewStyle>
   };
 
   static defaultProps = {
@@ -26,7 +28,7 @@ export default class AnimateNumber extends Component {
     timing: 'linear',
     steps: 45,
     // value: 0,
-    formatter: (val) => val,
+    formatter: (val: number) => val,
     onFinish: () => {}
   };
 
