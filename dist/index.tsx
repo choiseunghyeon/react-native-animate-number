@@ -11,6 +11,8 @@ const HALF_RAD = Math.PI/2
 export default class AnimateNumber extends Component {
 
   props: {
+    // Text Component의 최대 폰트 크기 배율 설정
+    maxFontSizeMultiplier?: number | null | undefined,
     countBy?: number,
     interval?: number,
     steps?: number,
